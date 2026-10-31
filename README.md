@@ -37,7 +37,21 @@ independent. That asymmetry is the proof the graph earns its place.
 ## Status
 
 - **Spec:** complete — see `docs/`.
-- **Build:** pending.
+- **Deterministic core:** BUILT & PROVEN. The twin, the fair baseline, and the
+  DR-001 discrimination harness run green: the twin wins on the shared-driver
+  scenario (delta +0.075, 90% per-user win rate) and correctly ties on the
+  independent-deficit control (delta 0.000). Invariants I1/I2/I5/I6/I7 are
+  enforced in code and covered by `tests/test_core.py` (6 tests green).
+- **Backend (FastAPI) + demo frontend:** pending (build-order steps 7–8).
+
+Run the proof:
+
+```
+cd NudgeTwin
+set PYTHONPATH=src        # PowerShell: $env:PYTHONPATH="src"
+python -m nudgetwin.dr001
+python -m pytest tests/test_core.py -q
+```
 
 ## Layout
 
