@@ -96,7 +96,15 @@ def run_scenario(scenario: str, n: int = 30) -> ScenarioResult:
         verdict = "BASELINE WINS — relational reasoning hurt (report honestly)"
     else:
         verdict = "TIE — graph buys nothing here (expected for independent deficits)"
-    return ScenarioResult(scenario, n, round(tm, 4), round(bm, 4), round(delta, 4), round(win_rate, 3), verdict)
+    return ScenarioResult(
+        scenario,
+        n,
+        round(tm, 4),
+        round(bm, 4),
+        round(delta, 4),
+        round(win_rate, 3),
+        verdict,
+    )
 
 
 def run_dr001(n: int = 30) -> dict[str, ScenarioResult]:

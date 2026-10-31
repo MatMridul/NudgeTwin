@@ -1,0 +1,15 @@
+[project]
+name = "nudgetwin"
+version = "0.1.0"
+description = "Deterministic digital-twin layer for personalized health nudging"
+requires-python = ">=3.11"
+dependencies = ["numpy"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# E/F pyflakes+pycodestyle, I import-sort, B bugbear, UP pyupgrade, SIM simplify
+select = ["E", "F", "I", "B", "UP", "SIM"]
