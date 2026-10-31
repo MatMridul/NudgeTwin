@@ -3,7 +3,7 @@ name = "nudgetwin"
 version = "0.1.0"
 description = "Deterministic digital-twin layer for personalized health nudging"
 requires-python = ">=3.11"
-dependencies = ["numpy"]
+dependencies = ["numpy", "fastapi", "uvicorn"]
 
 [tool.ruff]
 line-length = 100

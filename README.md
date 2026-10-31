@@ -42,7 +42,20 @@ independent. That asymmetry is the proof the graph earns its place.
   scenario (delta +0.075, 90% per-user win rate) and correctly ties on the
   independent-deficit control (delta 0.000). Invariants I1/I2/I5/I6/I7 are
   enforced in code and covered by `tests/test_core.py` (6 tests green).
-- **Backend (FastAPI) + demo frontend:** pending (build-order steps 7–8).
+- **Backend (FastAPI):** BUILT & TESTED. A thin port over the core (no business
+  logic in route handlers) exposing `/cohort`, `/user/{id}/twin`,
+  `/user/{id}/decide`, `/eval/dr001`, `/health`. Serializers preserve every
+  honesty badge (claim types, edge provenance, projected-not-realized). Covered
+  by `tests/test_api.py` (6 in-process TestClient tests). Total suite: 12 green.
+- **Demo frontend:** pending (build-order step 8).
+
+Run the backend (loopback only):
+
+```
+set PYTHONPATH=src        # PowerShell: $env:PYTHONPATH="src"
+uvicorn nudgetwin.api:app --host 127.0.0.1 --port 8000
+# then open http://127.0.0.1:8000/docs
+```
 
 Run the proof:
 
